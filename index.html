@@ -13,9 +13,9 @@ function startTime() {
     var h = today.getHours();
     var m = today.getMinutes();
     var s = today.getSeconds();
-	var d = today.getDay();
-	var mo = today.getMonth();
-	var y = today.getFullYear();
+    var d = today.getDate();
+    var mo = today.getMonth()+1;
+    var y = today.getFullYear();
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
