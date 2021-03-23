@@ -1,13 +1,14 @@
-<html>
-  <script>
+<div id="time"></div>
+
+<sctipt>
   function checkTime(i) {
     if (i < 10) {
-      i = "0" + i;
+        i = "0" + i;
     }
     return i;
-  }
+}
 
-  function startTime() {
+function startTime() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -16,14 +17,9 @@
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-    t = setTimeout(function() {
-      startTime()
+    t = setTimeout(function () {
+        startTime()
     }, 500);
-  }
-  startTime();
-  </script>
-
-  <body>
-    <div id="time"></div>
-  </body>
-</html>
+}
+startTime();
+</script>
