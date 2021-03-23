@@ -1,6 +1,6 @@
 <div id="time"></div>
 
-<sctipt>
+<script>
   function checkTime(i) {
     if (i < 10) {
         i = "0" + i;
@@ -13,10 +13,15 @@ function startTime() {
     var h = today.getHours();
     var m = today.getMinutes();
     var s = today.getSeconds();
+	var d = today.getDay();
+	var mo = today.getMonth();
+	var y = today.getFullYear();
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+	d = checkTime(d);
+	mo = checkTime(mo);
+    document.getElementById('time').innerHTML = "date -s "+y+"."+mo+"."+d+"-"+h+":"+m+":"+s+"";
     t = setTimeout(function () {
         startTime()
     }, 500);
